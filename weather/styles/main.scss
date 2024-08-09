@@ -1,0 +1,88 @@
+@import 'variables';
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: $primary-color;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    input {
+        padding: 10px;
+        border: 1px solid $primary-color;
+        border-radius: $border-radius 0 0 $border-radius;
+        outline: none;
+        flex: 1;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0 $border-radius $border-radius 0;
+        background-color: $primary-color;
+        color: white;
+        cursor: pointer;
+        transition: background-color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(1);
+        }
+    }
+}
+
+.weather-card {
+    background: lighten($primary-color, 40%);
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h2 {
+    margin: 0;
+    font-size: 2em;
+    color: $text-color;
+}
+
+.weather-card p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+.temp {
+    margin: 20px 0;
+    font-size: 3em;
+    color: $primary-color;
+}
+
+.details p {
+    font-size: 1em;
+}
