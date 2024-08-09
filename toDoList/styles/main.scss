@@ -1,0 +1,108 @@
+@import 'variables';
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: $primary-color;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+        border-color: darken($primary-color, 10%);
+        outline: none;
+    }
+}
+
+button {
+    width: 25%;
+    padding: 10px;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: $border-radius;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: lighten($primary-color, 40%);
+    padding: 10px;
+    border-radius: $border-radius;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+        background-color: lighten($primary-color, 50%);
+    }
+
+    &.completed {
+        text-decoration: line-through;
+        color: lighten($text-color, 40%);
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: $primary-color;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        &:hover {
+            color: $white;
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(1);
+        }
+    }
+}
