@@ -1,0 +1,100 @@
+@import 'variables';
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.game-container, .info-container {
+    background: white;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: $primary-color;
+}
+
+.current-player {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.stats {
+    font-size: 1em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, $cell-size);
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.cell {
+    background-color: lighten($primary-color, 40%);
+    border-radius: $border-radius;
+    width: $cell-size;
+    height: $cell-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+    transition: background-color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
+
+    &:hover {
+        background-color: lighten($primary-color, 50%);
+        transform: scale(1.05);
+    }
+
+    &.player-x {
+        color: $primary-color;
+        &:before {
+            content: "X";
+        }
+    }
+
+    &.player-o {
+        color: $secondary-color;
+        &:before {
+            content: "O";
+        }
+    }
+}
+
+button {
+    padding: 10px 20px;
+    background-color: $secondary-color;
+    border: none;
+    border-radius: $border-radius;
+    color: white;
+    cursor: pointer;
+    transition: background-color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
+
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+}
